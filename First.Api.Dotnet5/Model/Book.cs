@@ -1,14 +1,13 @@
-﻿using System;
+﻿using First.API.Dotnet5.Model.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace First.API.Model
 {
     [Table("books")]
-    public class Book
+    public class Book : BaseEntity
     {
-        [Column("id")]
-        public int Id { get; set; }
 
         [Column("author")]
         [Required]

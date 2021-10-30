@@ -1,14 +1,14 @@
-﻿using First.API.Model;
-using First.API.Repository;
+﻿using First.API.Dotnet5.Repository.Generics;
+using First.API.Model;
 using System.Collections.Generic;
 
 namespace First.API.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private readonly IPersonRepository _repository;
+        private readonly IRepository<Person> _repository;
 
-        public PersonBusinessImplementation(IPersonRepository repository)
+        public PersonBusinessImplementation(IRepository<Person> repository)
         {
             _repository = repository;
         }

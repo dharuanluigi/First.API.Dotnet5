@@ -1,4 +1,5 @@
 ﻿using First.API.Dotnet5.Model.Base;
+using First.API.Model;
 using First.API.Model.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
