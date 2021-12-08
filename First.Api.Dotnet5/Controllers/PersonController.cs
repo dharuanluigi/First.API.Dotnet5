@@ -1,4 +1,5 @@
 ﻿using First.API.Business;
+using First.API.Dotnet5.Data.VO;
 using First.API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -40,7 +41,7 @@ namespace First.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddPerson([FromBody] Person person)
+        public IActionResult AddPerson([FromBody] PersonVO person)
         {
             if (person != null)
             {
@@ -53,7 +54,7 @@ namespace First.API.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Person person)
+        public IActionResult Update([FromBody] PersonVO person)
         {
             if (person != null)
             {

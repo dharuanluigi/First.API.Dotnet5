@@ -1,14 +1,19 @@
-﻿using First.API.Model;
+﻿using First.API.Dotnet5.Data.VO;
+using First.API.Model;
 using System.Collections.Generic;
 
 namespace First.API.Business
 {
     public interface IPersonBusiness
     {
-        Person Create(Person p);
-        Person Update(Person p);
+        PersonVO Create(PersonVO p);
+
+        PersonVO Update(PersonVO p);
+        
         void Delete(long id);
-        Person FindById(long id);
-        List<Person> FindAll();
+        
+        PersonVO FindById(long id);
+        
+        List<PersonVO> FindAll();
     }
 }
