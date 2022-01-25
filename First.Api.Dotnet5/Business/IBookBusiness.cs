@@ -1,18 +1,18 @@
-﻿using First.API.Model;
+﻿using First.API.Dotnet5.Data.VO;
 using System.Collections.Generic;
 
 namespace First.API.Business
 {
     public interface IBookBusiness
     {
-        List<Book> GetAllBooks();
+        List<BookVO> GetAllBooks();
 
-        Book GetABookById(int id);
+        BookVO GetABookById(int id);
 
-        Book Add(Book book);
+        BookVO Add(BookVO book);
 
         void Remove(int id);
 
-        Book Update(Book updatedBook);
+        BookVO Update(BookVO updatedBook);
     }
 }

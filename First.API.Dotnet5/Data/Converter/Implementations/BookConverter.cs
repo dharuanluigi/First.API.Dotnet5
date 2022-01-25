@@ -1,14 +1,16 @@
 ﻿using First.API.Dotnet5.Data.Converter.Contract;
 using First.API.Dotnet5.Data.VO;
 using First.API.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace First.API.Dotnet5.Data.Converter.Implementations
 {
-    public class PersonConverter : IParser<PersonVO, Person>, IParser<Person, PersonVO>
+    public class BookConverter : IParser<BookVO, Book>, IParser<Book, BookVO>
     {
-        public Person Parser(PersonVO origin)
+        public Book Parser(BookVO origin)
         {
             if(origin is null)
             {
@@ -16,18 +18,17 @@ namespace First.API.Dotnet5.Data.Converter.Implementations
             }
             else
             {
-                return new Person
+                return new Book
                 {
-                    Id = origin.Id,
-                    FirstName = origin.FirstName,
-                    LastName = origin.LastName,
-                    Gender = origin.Gender,
-                    Address = origin.Address
+                    Title = origin.Title,
+                    Author = origin.Author,
+                    Price = origin.Price,
+                    ReleaseDate = origin.ReleaseDate
                 };
             }
         }
 
-        public PersonVO Parser(Person origin)
+        public BookVO Parser(Book origin)
         {
             if (origin is null)
             {
@@ -35,18 +36,17 @@ namespace First.API.Dotnet5.Data.Converter.Implementations
             }
             else
             {
-                return new PersonVO
+                return new BookVO
                 {
-                    Id = origin.Id,
-                    FirstName = origin.FirstName,
-                    LastName = origin.LastName,
-                    Gender = origin.Gender,
-                    Address = origin.Address
+                    Title = origin.Title,
+                    Author = origin.Author,
+                    Price = origin.Price,
+                    ReleaseDate = origin.ReleaseDate
                 };
             }
         }
 
-        public List<Person> Parser(List<PersonVO> origin)
+        public List<Book> Parser(List<BookVO> origin)
         {
             if(origin is null)
             {
@@ -58,7 +58,7 @@ namespace First.API.Dotnet5.Data.Converter.Implementations
             }
         }
 
-        public List<PersonVO> Parser(List<Person> origin)
+        public List<BookVO> Parser(List<Book> origin)
         {
             if(origin is null)
             {

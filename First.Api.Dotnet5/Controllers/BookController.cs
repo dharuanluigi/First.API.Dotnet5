@@ -1,4 +1,5 @@
 ﻿using First.API.Business;
+using First.API.Dotnet5.Data.VO;
 using First.API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ namespace First.API.Controllers
     {
         private readonly IBookBusiness _bookBusiness;
         private readonly ILogger<BookController> _logger;
+
         public BookController(IBookBusiness bookBusiness, ILogger<BookController> logger)
         {
             _bookBusiness = bookBusiness;
@@ -38,7 +40,7 @@ namespace First.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book book)
+        public IActionResult AddBook([FromBody] BookVO book)
         {
             if (book != null)
             {
@@ -63,7 +65,7 @@ namespace First.API.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Book updatedBook)
+        public IActionResult Update([FromBody] BookVO updatedBook)
         {
             var result = _bookBusiness.Update(updatedBook);
 
